@@ -1,0 +1,78 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+
+.wrap__footer {
+	border-top: 1px solid $lighter-grey;
+	padding: 2%;
+}
+
+.footer__brands {
+	margin: 0 -2.08% $space;
+	padding: $pad 2%;
+}
+.footer__brands .c__item {
+	margin: 0;
+}
+
+.menu--footer, menu--footer ul {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+.menu--footer li {
+	float: left;
+	list-style: none;
+	font-weight: bold;
+	font-size: $font-size-small;
+	letter-spacing: $letter-spacing;
+	text-transform: uppercase;
+}
+.menu--footer a {
+	display: block;
+	padding: 0 $pad-half;
+	color: $darkest-grey;
+	text-decoration: none;
+	
+	&:hover {
+		color: $grey;
+	}
+}
+
+.footer__social ul, .footer__social li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.footer__social a {
+	display: block;
+	margin: 0 $space 0 0;
+	width: 25px;
+	height: 25px;
+	background-image: url(../../images/mdbf/social.png);
+	text-indent: 999em;
+	overflow: hidden;
+	
+	&:hover {
+		opacity: 0.5;
+	}
+}
+.footer__social .fb {
+	background-position: 0 0;
+}
+.footer__social .tw {
+	background-position: -25px 0;
+}
+.footer__social .pin {
+	background-position: -50px 0;
+}
+.footer__social .li {
+	background-position: -75px 0;
+}
+
+.copyright {
+	padding: $pad 0 0;
+	font-size: $font-size-small;
+	color: $grey;
+}

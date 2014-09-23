@@ -1,0 +1,3 @@
+application/config/database.php
+application/views/smarty_cache/
+application/views/smarty_templates_c/

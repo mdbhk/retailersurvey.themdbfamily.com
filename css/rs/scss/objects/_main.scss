@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    MAIN CONTENT AREA
+\*------------------------------------*/
+
+[role=main] {
+	clear: both;
+}
+
+.main__section {
+	position: relative;
+	width: 100%;
+}
+@media all and (min-width: $bp-med) {
+	.section--fit-to-screen {
+		min-height: 100vh;
+	}
+}

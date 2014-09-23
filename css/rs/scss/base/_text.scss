@@ -1,0 +1,65 @@
+/**
+ * Text-Related Elements 
+ */
+ 
+p {
+	margin-bottom: $space;
+}
+
+
+/**
+ * Quotes 
+ */
+
+blockquote {
+	margin: $space 0;
+}
+q {
+    font-style:italic;
+    color: $grey;
+}
+
+/** 
+ * Horizontal Rule 
+ */ 
+ 
+hr {
+	border: 0;
+    height: 1px;
+    background: $black;
+	width: $space-quad;
+    margin: $space-double auto;
+}
+
+/** 
+ *Inline 
+ */
+
+abbr {
+    border-bottom: 1px dotted $grey;
+    cursor: help;
+}
+strong, b {
+	font-weight: bold;
+}
+em, i {
+	font-style: italic;
+}
+sup {
+	font-size: $font-size-smaller; 
+	vertical-align:top;
+} 
+sub {
+	font-size: $font-size-smaller; 
+	vertical-align: bottom;
+} 
+small {
+	font-size: $font-size-small;
+}
+cite {
+	font-family: $font-secondary;
+	font-style: italic;
+}
+pre, code, kbd, samp, var {
+	font-family: monospace;
+}

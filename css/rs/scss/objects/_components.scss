@@ -1,0 +1,183 @@
+#survey-header {
+	background: linear-gradient($faded-purple-2, $light-purple);
+	background-color: $light-purple;
+	
+	& p, & h4 {
+		color: $white;
+		text-shadow: 0 0 0.25em rgba(0,0,0,0.2);
+	}
+}
+#logout {
+	position: absolute;
+	top: 0.5em;
+	right: 1em;
+	
+	a {
+		color: white;
+		text-decoration: none;
+		font-size: $font-size-small;
+		
+		&:hover, &:active {
+			color: $light-purple;
+		}
+	}
+}
+
+.legend {
+	position: relative;
+	border-bottom: 1px solid $lighter-grey;
+	padding: $pad;
+	
+	.js .address &:hover {
+		background: linear-gradient($white, $lightest-grey);
+		background-color: $lightest-grey;
+		
+		border-top-left-radius: 0.5em;
+		border-top-right-radius: 0.5em;
+		
+		cursor: pointer;
+		& h4, & .slide {
+			color: $darker-grey;
+		}
+	}
+	
+	&.rolled {
+		border-bottom: 0;
+	}
+}
+.legend h4 {
+	margin: 0;
+}
+.legend .slide {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	display: block;
+}
+
+.field {
+	padding: $pad;
+}
+
+
+
+
+.checkbox-wrap {
+	position: relative;
+	border: 1px solid $lighter-grey;
+	border-radius: 0.25em;
+}
+.checkbox-wrap label {
+	padding: 1em;
+	font-size: $font-size-norm;	
+	cursor: pointer;
+	
+	&:hover {
+		box-shadow: 0 0 0.5em $lighter-grey;
+	}
+}	
+.checkbox-wrap.selected {
+	background: linear-gradient($faded-purple-2, $light-purple);
+	background-color: $light-purple;
+	border-color: $faded-purple-2;
+	color: $white;
+}
+.checkbox-wrap.selected label {
+	background: transparent;
+}
+
+
+.checkbox-wrap__input {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+}
+.checkbox-wrap__label {
+	margin-left: 30px;
+}
+
+.checkbox-wrap .form-error {
+	position: absolute;
+	bottom: -3em;
+	left: -1.25em;
+	width: 250px;
+	padding: 0;
+	margin: 0;
+}
+
+.js .ship-to-name, .js .store-name {
+	display: none;
+}
+
+
+.js .address {
+	display: none;
+	
+	&.address--1 {
+		display: block;
+	}
+}
+.no-js #add-address {
+	display: none;
+}
+
+
+
+
+
+.response {
+	color: $purple;
+	font-size: $font-size-small;
+	font-weight: bold;
+}
+.message.valid {
+	border: 1px solid $valid;
+	background: $valid-background;
+	color: $valid;
+}
+
+/* Data tables */
+
+#datatable_length, #datatable_filter {
+	margin: 0 0 $space;
+	width: 50%;
+}
+#datatable_length label, 
+#datatable_length select,
+#datatable_filter label,
+#datatable_filter input {
+	display: inline;
+	width: auto;
+}
+
+
+
+.popup-address {
+	min-width: 500px;
+	font-size: $font-size-small;
+	padding: 20px !important;
+	background: $white !important;
+	border-radius: 0.5em !important;
+}
+#buttons {
+	border-bottom: 1px solid $lighter-grey;
+	padding-bottom: $pad-double;
+	margin-bottom: $space-and-half;
+}
+#export form, #hide form {
+	display: inline;
+}
+
+.no-js #export-filtered, .no-js #export-selected,
+.no-js #hide-filtered, .no-js #hide-selected {
+	display: none;
+}
+
+#custno-result {	
+	display: block;
+	padding: $pad-quarter 0;
+	font-size: $font-size-small;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing;
+}

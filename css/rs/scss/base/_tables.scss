@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+
+table {
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	width: 100%;
+	
+	background: linear-gradient($lightest-grey, $white);
+	background-color: $lightest-grey;
+	box-shadow: inset 0 1px 0 0 $white;
+}
+th {
+	@extend .delta;
+	text-align: left;
+	border: 1px solid $lighter-grey;
+	padding: $pad;
+	font-weight: bold;
+	
+}
+td {
+	border: 1px solid $lighter-grey;
+	padding: $pad-half $pad;
+}

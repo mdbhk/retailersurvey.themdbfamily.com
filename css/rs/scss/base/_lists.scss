@@ -1,0 +1,28 @@
+ol, ul {
+	margin: 0 0 $space;
+	padding: 0 0 0 $pad-and-half;
+}
+ol {
+	list-style-type: decimal;
+}
+ul {
+	list-style-type: disc;
+}
+ol ol, ul ul, ol ul, ul ol {
+	margin: 0;
+}
+
+/**
+ * Definition Lists 
+ */
+ 
+dl {
+	overflow: hidden;
+	margin: 0 0 $space;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	padding: 0 0 0 $pad-and-half;
+}

@@ -1,0 +1,106 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Colors
+$purple : #472e8a;
+$purple-2: #592d7a;
+$grey-purple : #736695;
+$grey : #888;
+$light-grey: #a0a0a0;
+$lighter-grey : #e0e0e0;
+$lightest-grey : #f9f9f9;
+$dark-grey : #666;
+$darker-grey : #444;
+$darkest-grey : #222;
+$white : #fff;
+$black : #000;
+$off-white : #eef2ea;
+$light-purple: #c0a5d7;
+
+$faded-purple : rgba(71,46,138,0.75);
+$faded-purple-2 : rgba(89,45,122,0.75);
+$faded-white: rgba(255,255,255,0.85);
+$faded-white-2: rgba(255,255,255,0.5);
+$faded-grey: rgba(68,68,68,0.85);
+$faded-grey-2: rgba(68,68,68,0.5);
+$faded-black: rgba(0,0,0,0.85);
+$faded-black-2: rgba(0,0,0,0.65);
+
+$brand-color-mdbc : #793989;
+$brand-color-dv : #0076c0;
+$brand-color-bl : #ed174f;
+$brand-color-nw : #231f20;
+$brand-color-fb : #c03230;
+$brand-color-ub : #f17279;
+
+$error : #D8000C;
+$error-background : #FFBABA;
+$valid : #4F8A10;
+$valid-background : #DFF2BF;
+$warning : #9F6000;
+$warning-background : #FEEFB3;
+$info : #00529B;
+$info-background : #BDE5F8;
+
+$brand-facebook: #03539e;
+$brand-twitter: #35ccff;
+$brand-linkedin: #217bc1;
+
+//Typography
+$font : "Open Sans", "Helvetica", "Arial", sans-serif;
+$font-secondary : Georgia, Times, "Times New Roman", serif;
+
+$font-size-norm : 1em;
+$font-size-large : 1.618em;
+$font-size-larger : 2.618em;
+$font-size-largest : 4.326em;
+$font-size-x-large : 6.854em;
+$font-size-small: 0.8em;
+$font-size-smaller: 0.618em;
+
+$font-size-small-to-normal: 1.25em;
+
+$letter-spacing : 1px;
+$letter-spacing-2 : 2px;
+
+$base-font-multiplier : 1.125;
+
+//Layout
+$max-width: 72rem;
+$offset-left-1: 4.5rem;
+
+$l-sidebar-width: 19.75rem;
+
+//Defaults
+$space : 1rem;
+$space-and-half : $space*1.5;
+$space-double : $space*2;
+$space-triple : $space*3;
+$space-quad : $space*4;
+$space-half : $space/2;
+$space-quarter : $space/4;
+
+$pad : 1rem;
+$pad-and-half : $pad*1.5;
+$pad-double : $pad*2;
+$pad-half : $pad/2;
+$pad-quarter :$pad/4;
+
+
+//Breakpoints
+$bp-x-small: 24em; 		/* 384 */
+$bp-small : 30em;	/* 480 */
+$bp-med : 48em;		/* 768 */
+$bp-large : 68em;		/* 1088 */
+
+$bp-height : 50em;
+
+// $bp-large : 50em;		/* 800 */
+// $bp-small-3 : 39.8em;	/* 637 */
+// $bp-med-2 : 48em;		/* 768 */
+// $bp-large : 66em;		/* 1056 */
+// $bp-large-2 : 73em;			/* 1168 */
+// $bp-large-3 : 89em;			/* 1424 */
+// $bp-xxxl : 93em;		/* 1488 */
+

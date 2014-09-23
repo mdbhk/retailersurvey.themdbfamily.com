@@ -1,0 +1,44 @@
+.border-bottom {	
+	border-bottom: 3px dotted $red;	
+	
+	.borderimage & {
+		border-image: url(../../images/bl/dots.png) 0 0  100% 0 repeat;
+		border-width: 0 0 4px 0;
+	}
+}
+.border-bottom-grey {	
+	border-bottom: 3px dotted $lightest-grey;	
+	
+	.borderimage & {
+		border-image: url(../../images/bl/dots-grey.png) 0 0  100% 0 repeat;
+		border-width: 0 0 4px 0;
+	}
+}
+
+.border-top {	
+	border-top: 3px dotted $red;	
+	
+	.borderimage & {
+		border-image: url(../../images/bl/dots.png) 100% 0 0 0 repeat;
+		border-width: 4px 0 0 0;
+	}
+}
+
+.border-top-bottom {	
+	border-top: 3px dotted $red;	
+	border-bottom: 3px dotted $red;	
+	
+	.borderimage & {
+		border-image: url(../../images/bl/dots.png) 100% 0 100% 0 repeat;
+		border-width: 4px 0 4px 0;
+	}
+}
+
+.border-right {	
+	border-right: 3px dotted $red;	
+	
+	.borderimage & {
+		border-image: url(../../images/bl/dots-v.png) 0 100% 0 0 repeat;
+		border-width: 0 4px 0 0;
+	}
+}

@@ -1,0 +1,269 @@
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+
+/*
+ * TYPES:
+ * Fluid thirds
+ * Fluid quarters
+ * 
+ * Collapse halves
+ * Collapse thirds
+ * Collapse quarters
+ *
+ * Collapse custom
+ *  one-col
+ * 	two-col
+ * 	three-col
+ * 	four-col
+ * 	five-col
+ * 	six-col
+ * 
+ * Always halves
+ * Always thirds
+ * Always quarters
+ * 	
+ * Sidebar 
+ */
+
+.g__wrap {
+	padding: $pad 0;
+}
+.g__wrap-2 { 
+	padding: 0 5%;
+}
+.full-bg .g__wrap-2 { 
+	padding: $pad-double 5%;
+}
+.g {
+	max-width: $max-width;	
+	margin: 0 auto;
+}
+/*
+@media all and (min-width: $bp-small) {
+	.g__wrap {
+		padding: $pad-double 0;
+	}
+}
+*/
+@media all and (min-width: $bp-med) {
+	.full-bg .g__wrap-2 { 
+		padding: 0 5%;
+	}
+}
+
+.g__item {
+	margin: 2%;
+	min-height: 1px;
+}
+
+.g__single .g__item {
+	float: none;
+	width: 96%;
+}
+
+.g__always-halves .g__item {
+	float: left;
+	width: 45.9999%
+}
+.g__always-halves .g__item:nth-child(2n+1) {
+	clear: both;
+}
+.g__always-thirds .g__item {
+	float: left;
+	width: 29.3333%
+}
+.g__always-thirds .g__item:nth-child(3n+1) {
+	clear: both;
+}
+.g__always-quarters .g__item {
+	float: left;
+	width: 20.9999%
+}
+.g__always-quarters .g__item:nth-child(4n+1) {
+	clear: both;
+}
+
+
+@media all and (min-width: $bp-small) {
+	.g__fluid-thirds .g__item, 
+	.g__fluid-quarters .g__item {
+		float: left;
+		width: 45.9999%;
+	}
+	.g__fluid-thirds .g__item:nth-child(2n+1), 
+	.g__fluid-quarters .g__item:nth-child(2n+1) {
+		clear: both;
+	}
+}
+
+@media all and (min-width: $bp-med) {
+	.g__fluid-thirds .g__item,
+	.g__fluid-quarters .g__item	{
+		width: 29.3333%;
+	}
+	.g__fluid-thirds .g__item:nth-child(2n+1),
+	.g__fluid-quarters .g__item:nth-child(2n+1) {
+		clear: none;
+	}
+	.g__fluid-thirds .g__item:nth-child(3n+1),
+	.g__fluid-quarters .g__item:nth-child(3n+1) {
+		clear: both;
+	}
+	
+	.g__collapse-halves .g__item {
+		float: left;
+		width: 45.9999%
+	}
+	.g__collapse-halves .g__item:nth-child(2n+1) {
+		clear: both;
+	}
+	.g__collapse-thirds .g__item {
+		float: left;
+		width: 29.3333%
+	}
+	.g__collapse-thirds .g__item:nth-child(3n+1) {
+		clear: both;
+	}
+	.g__collapse-quarters .g__item {
+		float: left;
+		width: 20.9999%
+	}
+	.g__collapse-quarters .g__item:nth-child(4n+1) {
+		clear: both;
+	}
+	
+	.g__collapse-custom .g__item {
+		float: left;
+	}
+	.g__collapse-custom .g__one-col {
+		width: 4.3333%;
+	}
+	.g__collapse-custom .g__two-col {
+		width: 12.6666%;
+	}
+	.g__collapse-custom .g__three-col {
+		width: 20.9999%;
+	}
+	.g__collapse-custom .g__four-col {
+		width: 29.3333%;
+	}
+	.g__collapse-custom .g__five-col {
+		width: 37.6666%;
+	}
+	.g__collapse-custom .g__six-col {
+		width: 45.9999%;
+	}
+	.g__collapse-custom .g__seven-col {
+		width: 54.3333%;
+	}
+	.g__collapse-custom .g__eight-col {
+		width: 62.6666%;
+	}
+	.g__collapse-custom .g__nine-col {
+		width: 70.9999%;
+	}
+	.g__collapse-custom .g__ten-col {
+		width: 79.3333%;
+	}
+	.g__collapse-custom .g__eleven-col {
+		width: 87.6666%;
+	}
+	.g__collapse-custom .g__twelve-col {
+		width: 96%;
+	}
+}
+
+@media all and (min-width: $bp-large) {
+	.g__fluid-quarters .g__item {
+		width: 20.9999%;
+	} 
+	.g__fluid-quarters .g__item:nth-child(3n+1) {
+		clear: none;
+	}
+	.g__fluid-quarters .g__item:nth-child(4n+1) {
+		clear: both;
+	}
+}
+
+
+/* 
+ * Columns
+ */
+
+.c {
+	margin: 0 (0 - $pad-half);
+}
+.c__item {
+	float: left;
+	margin: 0;
+	padding: 0 $pad-half; 
+	
+	&.right {
+		float: right;
+	}
+}
+.c__item.half {
+	width: 50%;
+}
+.c__item.third {
+	width: 33.3333%;
+}
+.c__item.two-thirds {
+	width: 66.6666%;
+}
+.c__item.fluid-sixth {
+	width: 33.3333%;
+}
+.c__item.sixth {
+	width: 16.6666%;
+}
+
+@media all and (min-width: $bp-med) {
+	.c__item.fluid-sixth {
+		width: 16.6666%;
+	}
+}
+
+/*
+ * Masonry grid
+ */
+ 
+.gr {
+	width: 300px;
+	padding: 10px 0 3em;
+	margin: 0 auto;
+}
+@media all and (min-width: 610px) {
+	.gr {
+		width: 610px;
+	}
+}
+@media all and (min-width: 920px) {
+	.gr {
+		width: 920px;
+	}
+}
+@media all and (min-width: 1230px) {
+	.gr {
+		width: 1230px;
+	}
+}
+@media all and (min-width: 1540px) {
+	.gr {
+		width: 1540px;
+	}
+}
+@media all and (min-width: 1850px) {
+	.gr {
+		width: 1850px;
+	}
+}
+
+.gr__item {
+	float: left;
+	width: 300px;
+	height: 300px;
+	margin: 0 5px 10px;
+	padding: $pad-and-half;
+}

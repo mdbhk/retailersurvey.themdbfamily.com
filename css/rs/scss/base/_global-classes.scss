@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+
+/**
+ * Clearfix 
+ */
+
+.cf {
+    *zoom: 1;
+}
+.cf:before, .cf:after {
+    content: " "; 
+    display: table; 
+}
+.cf:after {
+    clear: both;
+}
+
+.hide {
+	display: none;
+}
+.is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/**
+ * Completely remove from the flow but leave available to screen readers. 
+ */
+ 
+.is-vishidden {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * Floats 
+ */
+ 
+.right {
+	float: right;
+	padding: 0 0 $pad $pad;
+}
+.left {
+	float: left;
+	padding: 0 $pad $pad 0;
+}
+
+/**
+ * Text-Align 
+ */
+
+.align-right {
+	text-align: right;
+}
+.align-center {
+	text-align: center;
+}
+.align-left {
+	text-align: left;
+}
+
+/**
+ * Display Classes 
+ */
+
+.message {
+	padding: $pad;
+	margin: 0 0 $space-and-half;
+	border-radius: 0.5em;
+}
+.error {
+	background: $error-background;
+	color: $error;
+}
+.warning {
+	background: $warning-background;
+	color: $warning;
+}
+.info {
+	background: $info-background;
+	color: $info;
+}
+
+.font-secondary {
+	font-family: $font-secondary;
+}

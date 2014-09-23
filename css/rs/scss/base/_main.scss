@@ -1,0 +1,12 @@
+body {
+	background: $white;
+	font: 100%/1.5 $font;
+	letter-spacing: 0.025em;
+	-webkit-text-size-adjust: 100%;
+	color: $darkest-grey;
+}
+@media all and (min-width: $bp-large) {
+	body {
+		font: 100%/1.5 $font;
+	}
+}

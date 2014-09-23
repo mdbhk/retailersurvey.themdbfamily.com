@@ -1,0 +1,65 @@
+h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+	font-family: $font;
+	color: $black;
+}
+h1, .alpha { 
+	font-family: $font-secondary;
+	font-size: $font-size-large;
+	letter-spacing: $letter-spacing-2;
+}
+h2, .beta { 
+	font-family: $font-secondary;
+	font-size: $font-size-large;
+	letter-spacing: $letter-spacing-2;
+}
+h3, .gamma { 
+	margin-bottom: $space;
+	font-size: $font-size-large;
+	line-height: 1.35;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing-2;
+}
+h4, .delta {
+	margin-bottom: $space;
+	font-size: $font-size-norm;
+	line-height: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing;
+}
+h5, .epsilon { 
+	margin-bottom: $space-half;
+	font-size: $font-size-norm;
+	line-height: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing;
+}
+h6, .zeta { 
+	margin: $space-quarter 0;
+	font-size: $font-size-norm;
+	line-height: 1.5em;
+	font-weight: bold;	
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing;
+}
+
+@media all and (min-width: $bp-med) {
+	h1, .alpha { 
+		font-size: $font-size-largest;
+		line-height: 1.2;
+	}
+	h2, .beta { 
+		font-size: $font-size-larger;
+		line-height: 1.3;
+	}
+}
+
+/**
+ * Headings with links 
+ */
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none;
+}

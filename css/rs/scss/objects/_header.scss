@@ -1,0 +1,188 @@
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+
+.wrap__header {
+	background: $purple;
+}
+.wrap__header-inner {
+	float: left;
+	width: 50%;
+	background: $grey-purple;
+}
+.wrap__header h1 {
+	display: none;
+}
+.wrap__header h1 a {	
+	display: block;
+	margin: 0 auto;
+	width: 48px;
+	height: 23px;
+	background: url(../../images/mdbf/logo-small.png) no-repeat 50% 50%;
+	text-indent: -999em;
+	overflow: hidden;
+}
+@media all and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.wrap__header h1 {
+		background: url(../../images/mdbf/logo.png) no-repeat 50% 50%;
+		background-size: 48px 23px;
+	}
+}
+
+.submenu {
+	float: right;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+}
+
+.menu ul, .submenu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: $font-size-small;
+}
+.menu a, .submenu a {
+	display: block;
+	padding: $pad-quarter 4%;
+	text-decoration: none;
+}
+.menu a {
+	color: $lightest-grey;
+	
+	&:hover {
+		background: $lighter-grey;
+		color: $purple;
+	}
+}
+.menu .current a {
+	background: $purple;
+	color: $white;
+}
+.submenu a {
+	color: $lightest-grey;
+	
+	&:hover {
+		background: $lighter-grey;
+		color: $purple;
+	}
+}
+.submenu .current a {
+	font-weight: bold;
+}
+
+.submenu__social {
+	padding: $pad-quarter 4%;
+}
+.submenu__social a {
+	padding: 0 !important;
+} 
+.submenu__social iframe {
+	margin: 0;
+}
+
+/*
+ * For med and above
+ */
+ 
+@media all and (min-width: $bp-med) {
+	.wrap__header {
+		background: transparent;
+	}
+	.wrap__header-inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		background: $white;
+		height: 2.5em;
+		
+		float: none;
+		padding: 0 2%;
+		width: 100%;
+	}
+	
+	.wrap__header h1 {
+		display: block;		
+		position: relative;
+		z-index: 9999;	
+		float: left;
+		margin: 0 $pad 0 0;
+		padding: 0;
+		width: 48px;
+		height: 2.5em;
+		background: $white;
+		font-size: $font-size-norm;
+	}
+	.wrap__header h1 a {
+		height: 2.5em;
+	}
+	.menu, .menu ul, .menu li {
+		float: left;
+	}
+
+	.menu ul {
+		line-height: 3.125em;
+	}
+	.menu a {
+		padding: 0 $pad;
+	}
+	.menu a {
+		color: $darkest-grey;
+		
+		&:hover {
+			background: $lightest-grey;
+			color: $purple;
+		}
+	}
+	.menu .current a {
+		background: $purple;
+		color: $white;
+	}
+
+	.submenu {
+		position: absolute;
+		top: 2em;
+		left: 0;
+		z-index: 9999;
+		float: none;
+		margin: 0;
+		padding: 0 2%;
+		width: 100%;
+		background: $purple;
+		font-size: $font-size-small-to-normal;
+		font-weight: bold;
+		letter-spacing: $letter-spacing-2;
+		text-transform: uppercase;
+		transition: background 300ms ease-in;
+	}
+	.submenu ul {
+		float: right;
+	}
+	.submenu li {
+		float: left;
+	}
+	.submenu a {
+		padding: 1.25em $pad;
+		color: $white;
+		
+		&:hover {
+			background: $darkest-grey;
+			color: $white;
+		}
+	}
+	.submenu .current a {
+		font-weight: normal;
+		font-style: italic;
+	}
+	
+	.submenu--fixed {
+		position: fixed;
+		top: 0;
+		background: $faded-purple;
+	}
+	
+	.submenu__social {
+		padding: 1.25em $pad;
+	}
+}

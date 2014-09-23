@@ -1,0 +1,42 @@
+
+.pager {
+	display: none;
+}
+
+@media all and (min-width: $bp-large) and (min-height: $bp-height) and (orientation: landscape) {
+	.pager {
+		position: fixed;
+		top: 50%;
+		right: 0;
+		display: block;
+		margin-top: -50px;
+	}
+	.pager a {
+		margin: 0 0 1px;
+		display: block;
+		width: 50px;
+		height: 50px;
+		padding: 21px 17px;
+		background: $darkest-grey;
+		overflow: hidden;
+		
+		&:hover, &.click {
+			background: $faded-purple;
+		}
+	}
+	.pager__prev:before, .pager__next:before {
+		color: $white;
+		display: block;
+		content: ' ';
+		margin: 0 0 50px;
+		width: 0; 
+		height: 0; 
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;	
+		border-bottom: 8px solid $white;
+	}
+	.pager__next:before {
+		border-top: 8px solid $white;
+		border-bottom: 0;
+	}
+}
