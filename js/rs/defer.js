@@ -12,6 +12,8 @@ function isInArray(value, array) {
 
 var stateArray = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
 	
+var caStateArray = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
+	
 /* 
  * Forms
  */
@@ -72,6 +74,17 @@ $.formUtils.addValidator({
 			$el.val( capitalized );
 			
 			if(isInArray(capitalized, stateArray)) {
+				return true;			
+			} else {
+				return false;			
+			}
+		} else if($el.closest('fieldset').find('.input--country').val() == 'CA') {
+			$el.attr('data-validation-error-msg', 'Please enter your 2 letter state code');
+			
+			var capitalized = value.toUpperCase();
+			$el.val( capitalized );
+			
+			if(isInArray(capitalized, caStateArray)) {
 				return true;			
 			} else {
 				return false;			
@@ -292,6 +305,8 @@ $('.input--country').change(function() {
 	
 	if($(this).val() == 'US') {
 		$.formUtils.suggest(stateInput, stateArray);	 
+	} else if($(this).val() == 'CA') {
+		$.formUtils.suggest(stateInput, caStateArray);	 
 	} else {
 		$.formUtils.suggest(stateInput, '');
 	}
