@@ -42,14 +42,14 @@
 				$this->smarty_data['Data'] = $this->session->userdata('data');
 				$this->smarty_data['RData'] = $this->session->userdata('rdata');
 			
-				$tpl=getTPL('success');
-				$this->smarty_tpl->displaytpl($tpl,@$this->smarty_data);
-				
 				$this->session->unset_userdata('success');
 				$this->session->unset_userdata('error');
 				$this->session->unset_userdata('errors');
 				$this->session->unset_userdata('data');
 				$this->session->unset_userdata('rdata');
+			
+				$tpl=getTPL('success');
+				$this->smarty_tpl->displaytpl($tpl,@$this->smarty_data);
 			}
 			else
 			{
@@ -66,18 +66,23 @@
 				$this->smarty_data['Data'] = $this->session->userdata('data');
 				$this->smarty_data['Message'] = $this->session->userdata('message');
 				
+				$this->session->unset_userdata('error');
+				$this->session->unset_userdata('errors');
+				$this->session->unset_userdata('data');
+				$this->session->unset_userdata('message');
+				
 				$tpl=getTPL('error');
 				$this->smarty_tpl->displaytpl($tpl,@$this->smarty_data);
 			}
 			else
 			{
+				$this->session->unset_userdata('error');
+				$this->session->unset_userdata('errors');
+				$this->session->unset_userdata('data');
+				$this->session->unset_userdata('message');
+			
 				show_404();
 			}
-			
-			$this->session->unset_userdata('error');
-			$this->session->unset_userdata('errors');
-			$this->session->unset_userdata('data');
-			$this->session->unset_userdata('message');
 		}
 	}
 ?>
