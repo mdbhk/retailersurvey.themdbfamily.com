@@ -25,7 +25,7 @@ class Survey_model extends CI_Model {
 		
 		$customer = false;
 		
-		$sql = "SELECT TOP 1 * FROM tbl_survey_customer WHERE Code = CAST(? AS VARCHAR(20))";
+		$sql = "SELECT TOP 1 * FROM tbl_survey_customer WHERE Code = CAST(? AS VARCHAR(20)) AND Activate=1";
 		$query = $this->db->query($sql, array($custNo));
 		if ($query->num_rows() <= 0)
 		{
