@@ -57,7 +57,7 @@ class Portal_model extends CI_Model {
 			$filterSQL .= ' )';
 		}
 	
-		$sql = "SELECT a.CustNo, a.WebSiteURL, b.* FROM tbl_survey_master a WITH (NOLOCK) LEFT JOIN tbl_survey_address b WITH (NOLOCK) ON a.ID = b.SurveyID WHERE a.Status = 1 " . $filterSQL . " ORDER BY a.CreateTime DESC";
+		$sql = "SELECT a.CustNo, a.WebSiteURL, b.* FROM tbl_survey_master a WITH (NOLOCK) LEFT JOIN tbl_survey_address b WITH (NOLOCK) ON a.ID = b.SurveyID WHERE b.ID IS NOT NULL AND a.Status = 1 " . $filterSQL . " ORDER BY a.CreateTime DESC";
 		$query = $this->db->query($sql, array());
 		
 		$records = array();
