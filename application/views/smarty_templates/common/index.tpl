@@ -38,15 +38,32 @@
 								</div>													
 								<div class="field">			
 									<div>
-										<label for="custno">Your MDB customer number:
+										<label for="custno">Your MDB customer number -
 										<b>Required. Find on your invoices, or by contacting your account specialist </b></label>
 										<input type="text" name="custno" id="custno" data-validation="required" data-validation-error-msg="Please enter your customer number" data-validation-length="max20">
 									</div>
-									<div id="custno-result"></div>
+									<div id="custno-result"></div>			
 									<div>
-										<label for="website">Website <em>(optional)</em></label>
+										<label for="website">Your website address <em>(optional)</em></label>
 										<input type="text" name="website" id="website" data-validation-optional="true" data-validation="url" data-validation-error-msg="Please enter a valid URL in the format http://www.domain.com">	
-									</div>										
+									</div>	
+									<div>
+										<label for="email">Your email address</label>
+										<input type="text" name="email" id="email" data-validation="required" data-validation="email" data-validation-error-msg="Please enter a valid email address">	
+									</div>	
+									<div style="height: 5px;">&nbsp;</div>
+									<div class="c cf store-field">								
+										<div class="c__item half">											
+											<div class="checkbox-wrap">
+												<label for="subscribe">
+												<div class="checkbox-wrap__input"><input type="checkbox" id="subscribe" name="subscribe" class="input--subscribe" value="subscribe"></div>
+												<div class="checkbox-wrap__label">
+													Subscribe to our newsletter
+												</div>
+												</label>
+											</div>										
+										</div>	
+									</div>									
 								</div>
 							</fieldset>
 							
@@ -57,7 +74,7 @@
 								</div>	
 											
 								<div class="field">		
-									<label>Address type: <b>Select one or both</b></label>
+									<label>Address type - <b>Select one or both</b></label>
 									<div class="c cf store-field">								
 										<div class="c__item half">											
 											<div class="checkbox-wrap">

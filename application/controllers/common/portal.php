@@ -109,6 +109,7 @@
 			$objPHPExcel->getActiveSheet()->SetCellValue('K1', 'Phone No.');
 			$objPHPExcel->getActiveSheet()->SetCellValue('L1', 'Ship To Location');
 			$objPHPExcel->getActiveSheet()->SetCellValue('M1', 'Store Location');
+			$objPHPExcel->getActiveSheet()->SetCellValue('N1', 'Email');
 			
 			$row = 2;
 			
@@ -132,6 +133,7 @@
 				$objPHPExcel->getActiveSheet()->SetCellValue('K'.$row, htmlspecialchars_decode($record['Phone'], ENT_QUOTES));
 				$objPHPExcel->getActiveSheet()->SetCellValue('L'.$row, htmlspecialchars_decode($record['isShipTo'], ENT_QUOTES));
 				$objPHPExcel->getActiveSheet()->SetCellValue('M'.$row, htmlspecialchars_decode($record['isStore'], ENT_QUOTES));
+				$objPHPExcel->getActiveSheet()->SetCellValue('N'.$row, htmlspecialchars_decode($record['Email'], ENT_QUOTES));
 						
 				$row ++;
 			}

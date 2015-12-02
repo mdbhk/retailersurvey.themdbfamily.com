@@ -57,13 +57,13 @@ class Portal_model extends CI_Model {
 			$filterSQL .= ' )';
 		}
 	
-		$sql = "SELECT a.CustNo, a.WebSiteURL, b.* FROM tbl_survey_master a WITH (NOLOCK) LEFT JOIN tbl_survey_address b WITH (NOLOCK) ON a.ID = b.SurveyID WHERE b.ID IS NOT NULL AND a.Status = 1 " . $filterSQL . " ORDER BY a.CreateTime DESC";
+		$sql = "SELECT a.CustNo, a.WebSiteURL, a.Email, b.* FROM tbl_survey_master a WITH (NOLOCK) LEFT JOIN tbl_survey_address b WITH (NOLOCK) ON a.ID = b.SurveyID WHERE b.ID IS NOT NULL AND a.Status = 1 " . $filterSQL . " ORDER BY a.CreateTime DESC";
 		$query = $this->db->query($sql, array());
 		
 		$records = array();
 		foreach ($query->result() as $row)
 		{
-			$records[] = array('CustNo'=>$row->CustNo, 'WebSiteURL'=>$row->WebSiteURL, 'Code'=>$row->Code, 'isShipTo'=>$row->isShipTo, 'isStore'=>$row->isStore, 'Name'=>$row->Name, 'Country'=>$row->Country, 'Address'=>$row->Address, 'Address2'=>$row->Address2, 'City'=>$row->City, 'State'=>$row->State, 'Zip'=>$row->Zip, 'Phone'=>$row->Phone);
+			$records[] = array('CustNo'=>$row->CustNo, 'WebSiteURL'=>$row->WebSiteURL, 'Email'=>$row->Email, 'Code'=>$row->Code, 'isShipTo'=>$row->isShipTo, 'isStore'=>$row->isStore, 'Name'=>$row->Name, 'Country'=>$row->Country, 'Address'=>$row->Address, 'Address2'=>$row->Address2, 'City'=>$row->City, 'State'=>$row->State, 'Zip'=>$row->Zip, 'Phone'=>$row->Phone);
 		}
 		
 		return sizeof($records) > 0 ? $records : false;

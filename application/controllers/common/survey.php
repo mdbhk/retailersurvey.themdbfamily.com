@@ -13,7 +13,7 @@
 		}
 		
 		public function post()
-		{
+		{		
 			$result = $this->survey_model->post_survey();
 			
 			if ($result['Result'])

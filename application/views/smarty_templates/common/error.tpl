@@ -48,14 +48,34 @@
 										<span class="help-block form-error"><!--{$smarty_data['Errors']['custno']['message']}--></span>
 										<!--{/if}-->
 									</div>
-									<div id="custno-result"></div>
+									<div id="custno-result"></div>	
 									<div>
 										<label for="website">Website <em>(optional)</em></label>
 										<input type="text" name="website" id="website" data-validation-optional="true" data-validation="url" data-validation-error-msg="Please enter a valid URL in the format http://www.domain.com" <!--{if isset($smarty_data['Data']['website'])}-->value="<!--{$smarty_data['Data']['website']}-->"<!--{/if}-->>
 										<!--{if isset($smarty_data['Errors']['website']['status'])}-->
 										<span class="help-block form-error"><!--{$smarty_data['Errors']['website']['message']}--></span>
 										<!--{/if}-->
-									</div>										
+									</div>		
+									<div>
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" data-validation="required" data-validation="email" data-validation-error-msg="Please enter a valid email address" <!--{if isset($smarty_data['Data']['email'])}-->value="<!--{$smarty_data['Data']['email']}-->"<!--{/if}-->>	
+										<!--{if isset($smarty_data['Errors']['email']['status'])}-->
+										<span class="help-block form-error"><!--{$smarty_data['Errors']['email']['message']}--></span>
+										<!--{/if}-->
+									</div>
+									<div style="height: 5px;">&nbsp;</div>
+									<div class="c cf store-field">								
+										<div class="c__item half">											
+											<div class="checkbox-wrap">
+												<label for="subscribe">
+												<div class="checkbox-wrap__input"><input type="checkbox" id="subscribe" name="subscribe" class="input--subscribe" value="subscribe"></div>
+												<div class="checkbox-wrap__label">
+													Subscribe to our newsletter
+												</div>
+												</label>
+											</div>										
+										</div>	
+									</div>								
 								</div>
 							</fieldset>
 							

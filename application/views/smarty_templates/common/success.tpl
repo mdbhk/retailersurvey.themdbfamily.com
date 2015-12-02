@@ -48,6 +48,10 @@
 										<label for="website">Website <em>(optional)</em></label>
 										<span class="response"><!--{$smarty_data['Data']['website']}--></span>	
 									</div>
+									<div>
+										<label for="email">Email</em></label>
+										<span class="response"><!--{$smarty_data['Data']['email']}--></span>	
+									</div>
 								</div>
 							</fieldset>
 							
@@ -62,11 +66,11 @@
 									<label>Address type:</label>
 									<span class="response">
 									<!--{if $smarty_data['RData'][<!--{$key}-->]['is-ship-to'] && $smarty_data['RData'][<!--{$key}-->]['is-store']}-->
-									Ship-to address<br>Store address
-									<!--{elseif $smarty_data['RData'][<!--{$key}-->]['is-ship-to']}-->
-									Ship-to address
-									<!--{elseif $smarty_data['RData'][<!--{$key}-->]['is-store']}-->
-									Store address
+										Ship-to address<br>Store address
+										<!--{elseif $smarty_data['RData'][<!--{$key}-->]['is-ship-to']}-->
+										Ship-to address
+										<!--{elseif $smarty_data['RData'][<!--{$key}-->]['is-store']}-->
+										Store address
 									<!--{/if}-->
 									</span>
 								</div>	

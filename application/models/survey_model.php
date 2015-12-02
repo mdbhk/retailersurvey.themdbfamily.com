@@ -58,11 +58,12 @@ class Survey_model extends CI_Model {
 		
 		$validate = true;
 		$errors = array();
-		
+
 		if ($parms !== false)
 		{	
 			$data['custno'] = htmlentities(trim($parms['custno']), ENT_QUOTES);
 			$data['website'] = htmlentities(trim($parms['website']), ENT_QUOTES);
+			$data['email'] = htmlentities(trim($parms['email']), ENT_QUOTES);
 		
 			if (trim($parms['custno']) == '' || !isset($parms['custno']))
 			{
@@ -81,6 +82,13 @@ class Survey_model extends CI_Model {
 				$validate = false;
 				$errors['website']['status'] = true;
 				$errors['website']['message'] = 'Please enter a valid URL in the format http://www.domain.com';
+			}
+			
+			if (!filter_var(trim($parms['email']), FILTER_VALIDATE_EMAIL))
+			{
+				$validate = false;
+				$errors['email']['status'] = true;
+				$errors['email']['message'] = 'Please enter a valid email address';
 			}
 			
 			$filledAddress = array();
@@ -371,8 +379,8 @@ class Survey_model extends CI_Model {
 			{
 				$this->db->trans_begin();
 			
-				$sql = "INSERT INTO tbl_survey_master (Type, CustNo, WebSiteURL, Status) VALUES (?, ?, ?, 1)";
-				$query = $this->db->query($sql, array('retailer-survey', $data['custno'], $data['website']));
+				$sql = "INSERT INTO tbl_survey_master (Type, CustNo, WebSiteURL, Email, Status) VALUES (?, ?, ?, ?, 1)";
+				$query = $this->db->query($sql, array('retailer-survey', $data['custno'], $data['website'], $data['email']));
 				if (!$query)
 				{
 					$this->error = true;
@@ -450,6 +458,40 @@ class Survey_model extends CI_Model {
 				{
 					$this->db->trans_rollback();
 				}
+				
+				/* MailChimp */	
+				if(isset($parms['subscribe']) && strlen(trim($data['email'])) > 0) {				
+					$subdata = [
+						'email'     => $data['email'],
+						'status'    => 'subscribed'
+					];
+
+					$apiKey = '9acef7995c1b67364732a55cda825b70-us1';
+					$listId = '2aa07c1ab7';
+					$memberId = md5(strtolower($subdata['email']));
+					$dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
+					$url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
+
+					$json = json_encode([
+						'email_address' => $subdata['email'],
+						'status'        => $subdata['status']
+					]);
+
+					$ch = curl_init($url);
+					curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $apiKey);
+					curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt($ch, CURLOPT_POSTFIELDS, $json);                                                                                                                 
+
+					$result = curl_exec($ch);
+					$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+					curl_close($ch);	
+				}				
+				/* End MailChimp */
+				
 			}
 			
 			$this->data = $data;

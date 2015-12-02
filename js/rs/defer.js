@@ -338,8 +338,7 @@ $('#datatable_filter input').on('change', function() {
 	}
 });
 
-
-$('a.popup').on('click', function(e) {
+$('a.popup').on('click', function(e) { 
 	$('#dialog').find('.popup-address').remove();
 	$(this).next('.popup-address').clone().appendTo('#dialog').removeClass('is-hidden');
 	
@@ -366,6 +365,36 @@ $('a.popup').on('click', function(e) {
 	
 	return false;
 }); 
+
+table.on( 'draw.dt', function () {
+$('a.popup').off('click').on('click', function(e) { 
+	$('#dialog').find('.popup-address').remove();
+	$(this).next('.popup-address').clone().appendTo('#dialog').removeClass('is-hidden');
+	
+	$('#dialog').removeClass('is-hidden').dialog({
+		minWidth: 500,
+		maxHeight: 500,
+		modal: true,
+		draggable: false,
+		closeText: "<i class='icon-cross'></i>",
+		open: function() {
+            $('.ui-widget-overlay').bind('click', function() {
+                $('#dialog').dialog('close');
+            })
+        }, 		
+		show: {
+			effect: "fade",
+			duration: 90
+		},
+		hide: {
+			effect: "fade",
+			duration: 90
+		}
+	});
+	
+	return false;
+}); 
+} );
 
 
 /* Export buttons */
