@@ -69,6 +69,38 @@
 			exit();
 		}
 		
+		
+		public function edit($ID)
+		{
+		
+			if (!$this->session->userdata('LoggedIn') && $this->session->userdata('UserNum') <= 0)
+			{
+				redirect('/portal/login', 301);
+				exit();
+			}
+		
+			$survey = $this->portal_model->get_survey($ID);
+			$this->smarty_data['surveys'] = $survey;
+			//var_dump($survey);
+		
+			$tpl=getTPL('portal/edit');
+			$this->smarty_tpl->displaytpl($tpl,@$this->smarty_data);
+		}
+		public function save()
+		{
+	
+			$rs=$this->portal_model->save();
+			//var_dump($rs);
+			if ($rs['Errors'])
+			{
+				echo "<script>alert('Fail to update the address of custom# : ".$this->input->post('custno').". Please contact System admin/ try agagin later!');window.location='/portal';</script>";			
+			}
+			else
+			{
+				echo "<script>alert('The address of custom# : ".$this->input->post('custno')." has been updated!');window.location='/portal';</script>";			
+			}
+			exit();	
+		}
 		public function export()
 		{
 			$records = $this->portal_model->get_records_for_export();
